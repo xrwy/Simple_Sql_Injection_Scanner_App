@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Result</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/button.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/page.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="">
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">SQL Injection Result</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="wrap">
+                            <div class="img" style="background-image:url('./static/img/beach.jpg')">
+                            </div>
+                            <div class="login-wrap p-4 p-md-5">
+                                <div class="d-flex">
+                                    <div class="w-100">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div style="overflow-y: auto;height:250px;">
+                                                    <table class="table table-border">
+                                                        <thead>
+                                                            <tr>
+                                                            <th style="text-align: center;">
+                                                                Error in MYSQL Database
+                                                            </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% if  error_in_MYSQL_databases == 0 %}
+                                                                <td>
+                                                                    ERROR IN MYSQL DATABASE NOT FOUND.
+                                                                </td>
+                                                            {% else %}
+                                                                {% for error_in_MYSQL_databases_ in error_in_MYSQL_databases %}
+                                                                    <tr class="success">
+                                                                        <td>
+                                                                            <b>{{error_in_MYSQL_databases_}} <br/>
+                                                                        </td>
+                                                                    </tr>   
+                                                                {%endfor%}
+                                                            {% endif %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <div style="overflow-y: auto;height:250px;">
+                                                    <table class="table table-border">
+                                                        <thead>
+                                                            <tr>
+                                                            <th style="text-align: center;">
+                                                                Error in MSSQL Database
+                                                            </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% if  error_in_MSSQL_databases == 0 %}
+                                                                <td>
+                                                                    ERROR IN MSSQL DATABASE NOT FOUND.
+                                                                </td>
+                                                            {% else %}
+                                                                {% for error_in_MSSQL_databases_ in error_in_MSSQL_databases %}
+                                                                    <tr class="success">
+                                                                        <td>
+                                                                            <b>{{error_in_MSSQL_databases_}} <br/>
+                                                                        </td>
+                                                                    </tr>   
+                                                                {%endfor%}
+                                                            {% endif %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="col-md-6">
+                                                <div style="overflow-y: auto;height:250px;">
+                                                    <table class="table table-border">
+                                                        <thead>
+                                                            <tr>
+                                                            <th style="text-align: center;">
+                                                                Error in POSTGRES Database
+                                                            </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% if  error_in_POSTGRES_databases == 0 %}
+                                                                <td>
+                                                                    ERROR IN POSTGRES DATABASE NOT FOUND.
+                                                                </td>
+                                                            {% else %}
+                                                                {% for error_in_POSTGRES_databases_ in error_in_POSTGRES_databases %}
+                                                                    <tr class="success">
+                                                                        <td>
+                                                                            <b>{{error_in_POSTGRES_databases_}} <br/>
+                                                                        </td>
+                                                                    </tr>   
+                                                                {%endfor%}
+                                                            {% endif %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                                
+
+                                            <div class="col-md-6">
+                                                <div style="overflow-y: auto;height:250px;">
+                                                    <table class="table table-border">
+                                                        <thead>
+                                                            <tr>
+                                                            <th style="text-align: center;">
+                                                                Error in ORACLE Database
+                                                            </th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            {% if  error_in_ORACLE_databases == 0 %}
+                                                                <td>
+                                                                    ERROR IN ORACLE DATABASE NOT FOUND.
+                                                                </td>
+                                                            {% else %}
+                                                                {% for error_in_ORACLE_databases_ in error_in_ORACLE_databases %}
+                                                                    <tr class="success">
+                                                                        <td>
+                                                                            <b>{{error_in_ORACLE_databases_}} <br/>
+                                                                        </td>
+                                                                    </tr>   
+                                                                {%endfor%}
+                                                            {% endif %}
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 50px;">
+                            <div class="col-md-12">
+                                <div style="overflow-y: auto;height:250px;">
+                                    <table class="table table-border">
+                                        <thead>
+                                            <tr>
+                                                <th style="text-align: center;">
+                                                    SQL INJECTION QUERYS
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% if  sqlInjectionQuery == 0 %}
+                                                <td>
+                                                    SQL INJECTION Querys not found.
+                                                </td>
+                                            {% else %}
+                                                {% for sqlInjectionQuery in sqlInjectionQuerys %}
+                                                    <tr class="success">
+                                                        <td>
+                                                            <b style="text-transform:lowercase !important;">{{sqlInjectionQuery}} <br/>
+                                                        </td>
+                                                    </tr>   
+                                                {%endfor%}
+                                            {% endif %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
